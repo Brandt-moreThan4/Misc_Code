@@ -15,9 +15,6 @@ def create_empty_grid() -> np.array:
 black_number = 1
 red_number = 2
 
-import sys
-
-print(sys.path)
 
 def get_black_grid(grid):
     return grid == black_number
