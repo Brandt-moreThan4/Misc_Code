@@ -13,7 +13,7 @@ def hello_task():
     x = [x**2 for x in range(1_000)]
     logger.info('Finished squaring!!')
 
-    y = 5 + '4'
+    # y = 5 + '4'
 
 
 
