@@ -34,9 +34,9 @@ class Person:
     @task
     def hello_task(self):
         logger = prefect.context.get("logger")
-        logger.info("Hello world!")
-        x = [x**2 for x in range(1_000)]
-        print(self.num)
+        logger.info("Hello Task Start!")
+        x = [x**2 for x in range(3)]
+        print(np.random.random())
         logger.info('Finished squaring!!')
 
         # y = 5 + '4'
@@ -46,7 +46,8 @@ p = Person()
 # p.hello_task()
 
 with Flow("hello-flow") as flow:
-    p.hello_task(p)
+    for _ in range(3):
+        p.hello_task(p)
 
 
 
